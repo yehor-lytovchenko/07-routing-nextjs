@@ -1,3 +1,4 @@
+import Link from "next/link";
 import css from "./TagsMenu.module.css";
 
 export default function TagsMenu() {
@@ -7,12 +8,12 @@ export default function TagsMenu() {
       <ul className={css.menuList}>
         {/* список тегів */}
         <li className={css.menuItem}>
-          <a
+          <Link
             href={`url до сторінки за відповідним тегом`}
             className={css.menuLink}
           >
             Назва тегу
-          </a>
+          </Link>
         </li>
       </ul>
     </div>

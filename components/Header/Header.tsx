@@ -1,11 +1,7 @@
 import Link from "next/link";
 import css from "./Header.module.css";
 
-interface HeaderProps {
-  children: React.ReactNode;
-}
-
-export default function Header({ children }: HeaderProps) {
+export default function Header() {
   return (
     <header className={css.header}>
       <Link href="/" aria-label="Home">
@@ -17,7 +13,7 @@ export default function Header({ children }: HeaderProps) {
             <Link href="/">Home</Link>
           </li>
           <li>
-            <Link href="/notes">{children}</Link>
+            <Link href="/notes">Notes</Link>
           </li>
         </ul>
       </nav>
