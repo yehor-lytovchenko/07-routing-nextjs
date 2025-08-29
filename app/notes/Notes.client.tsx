@@ -22,7 +22,7 @@ export default function NotesCLient() {
 
   const { data, isLoading, isError, isSuccess } = useQuery({
     queryKey: ["notes", currentPage, query],
-    queryFn: () => fetchNotes(currentPage, query),
+    queryFn: () => fetchNotes(currentPage, query, ""),
     placeholderData: keepPreviousData,
   });
   const totalPages = data?.totalPages ?? 0;
