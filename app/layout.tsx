@@ -3,6 +3,8 @@ import "./globals.css";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import TanStackProvider from "@/components/TanStackProvider/TanStackProvider";
+import Head from "next/head";
+import TagsMenu from "@/components/TagsMenu/TagsMenu";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,7 +20,9 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <TanStackProvider>
-          <Header />
+          <Header>
+            <TagsMenu />
+          </Header>
           {children}
           <Footer />
           <div id="modal-root"></div>
