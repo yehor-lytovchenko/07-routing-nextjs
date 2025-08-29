@@ -11,11 +11,11 @@ import Modal from "@/components/Modal/Modal";
 import Pagination from "@/components/Pagination/Pagination";
 import NoteList from "@/components/NoteList/NoteList";
 
-interface NotesCLientProps {
+interface NotesClientProps {
   tag: string;
 }
 
-export default function NotesCLient({ tag }: NotesCLientProps) {
+export default function NotesCLient({ tag }: NotesClientProps) {
   const [currentPage, setCurrentPage] = useState(1);
   const [query, setQuery] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);

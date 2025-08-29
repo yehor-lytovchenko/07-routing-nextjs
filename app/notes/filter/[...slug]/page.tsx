@@ -7,17 +7,17 @@ import {
 import NotesCLient from "./Notes.client";
 
 interface NotesProps {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string[] }>;
 }
 
 export default async function Notes({ params }: NotesProps) {
   const { slug } = await params;
   console.log(slug[0]);
-  const tag = slug[0] === "All notes" ? "" : slug[0];
+  const tag = slug[0] === "All notes" ? undefined : slug[0];
   const queryClient = new QueryClient();
 
   await queryClient.prefetchQuery({
-    queryKey: ["notes"],
+    queryKey: ["notes", 1, "", tag],
     queryFn: () => fetchNotes(1, "", tag),
   });
 

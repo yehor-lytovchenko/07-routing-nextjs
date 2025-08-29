@@ -13,14 +13,16 @@ interface FetchNotesResponse {
 async function fetchNotes(
   page: number,
   query: string,
-  tag: string
+  tag: string | undefined
 ): Promise<FetchNotesResponse> {
   const response = await axios.get<FetchNotesResponse>("/notes/", {
     params: {
       perPage: 12,
       search: query,
       page,
-      ...(tag?.trim() && { tag: tag.trim() }),
+      ...(tag &&
+        tag.trim() !== "" &&
+        tag !== "All notes" && { tag: tag.trim() }),
     },
   });
   return response.data;
