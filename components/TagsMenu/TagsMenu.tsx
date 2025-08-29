@@ -8,7 +8,7 @@ export default function TagsMenu() {
     "Work",
     "Meeting",
     "Personal",
-    "Shoping",
+    "Shopping",
   ];
 
   return (

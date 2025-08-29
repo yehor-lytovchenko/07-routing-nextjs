@@ -15,9 +15,14 @@ async function fetchNotes(
   query: string,
   tag: string
 ): Promise<FetchNotesResponse> {
-  const response = await axios.get<FetchNotesResponse>(
-    `/notes/?search=${query}&page=${page}&tag=${tag}`
-  );
+  const response = await axios.get<FetchNotesResponse>("/notes/", {
+    params: {
+      perPage: 12,
+      search: query,
+      page,
+      ...(tag?.trim() && { tag: tag.trim() }),
+    },
+  });
   return response.data;
 }
 
