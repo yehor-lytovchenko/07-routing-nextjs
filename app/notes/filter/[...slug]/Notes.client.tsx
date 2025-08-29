@@ -12,7 +12,7 @@ import Pagination from "@/components/Pagination/Pagination";
 import NoteList from "@/components/NoteList/NoteList";
 
 interface NotesClientProps {
-  tag: string;
+  tag: string | undefined;
 }
 
 export default function NotesCLient({ tag }: NotesClientProps) {
