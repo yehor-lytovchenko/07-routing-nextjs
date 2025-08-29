@@ -12,10 +12,11 @@ interface FetchNotesResponse {
 
 async function fetchNotes(
   page: number,
-  query: string
+  query: string,
+  tag: string
 ): Promise<FetchNotesResponse> {
   const response = await axios.get<FetchNotesResponse>(
-    `/notes?page=${page}&perPage=12&search=${query}`
+    `/notes?page=${page}&perPage=12&search=${query}&?tag=${tag}`
   );
   return response.data;
 }
