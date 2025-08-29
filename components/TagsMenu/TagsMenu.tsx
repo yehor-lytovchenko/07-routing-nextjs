@@ -16,11 +16,9 @@ export default function TagsMenu() {
       <button className={css.menuButton}>Notes ▾</button>
       <ul className={css.menuList}>
         {tagsList.map((tag) => {
-          const href = tag === "All notes" ? "/notes" : `/notes/filter/{tag}`;
-
           return (
             <li className={css.menuItem} key={tag}>
-              <Link href={href} className={css.menuLink}>
+              <Link href={`/notes/filter/${tag}`} className={css.menuLink}>
                 {tag}
               </Link>
             </li>

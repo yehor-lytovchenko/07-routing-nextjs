@@ -11,7 +11,11 @@ import Modal from "@/components/Modal/Modal";
 import Pagination from "@/components/Pagination/Pagination";
 import NoteList from "@/components/NoteList/NoteList";
 
-export default function NotesCLient() {
+interface NotesCLientProps {
+  tag: string;
+}
+
+export default function NotesCLient({ tag }: NotesCLientProps) {
   const [currentPage, setCurrentPage] = useState(1);
   const [query, setQuery] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -21,8 +25,8 @@ export default function NotesCLient() {
   const closeModal = () => setIsModalOpen(false);
 
   const { data, isLoading, isError, isSuccess } = useQuery({
-    queryKey: ["notes", currentPage, query],
-    queryFn: () => fetchNotes(currentPage, query, ""),
+    queryKey: ["notes", currentPage, query, tag],
+    queryFn: () => fetchNotes(currentPage, query, tag),
     placeholderData: keepPreviousData,
   });
   const totalPages = data?.totalPages ?? 0;
