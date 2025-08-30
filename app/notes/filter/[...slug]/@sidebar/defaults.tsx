@@ -1,7 +1,7 @@
 import Link from "next/link";
 import css from "./SidebarNotes.module.css";
 
-export default function SidebarNotes() {
+export default async function SidebarNotes() {
   const tagsList = [
     "All notes",
     "Todo",
