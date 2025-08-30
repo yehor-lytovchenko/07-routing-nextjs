@@ -20,9 +20,7 @@ async function fetchNotes(
       perPage: 12,
       search: query,
       page,
-      ...(tag &&
-        tag.trim() !== "" &&
-        tag !== "All notes" && { tag: tag.trim() }),
+      ...(tag && tag.trim() !== "" && tag !== "All" && { tag: tag.trim() }),
     },
   });
   return response.data;
