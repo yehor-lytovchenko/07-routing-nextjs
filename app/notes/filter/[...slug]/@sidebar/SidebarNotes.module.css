@@ -2,8 +2,6 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
-
-
 }
 
 .menuItem {
@@ -22,23 +20,4 @@
 .menuLink:hover {
   background-color: #444;
   color: #ddd;
-
-
-}
-
-.menuList {
-  position: absolute;
-  top: calc(100% + 6px);
-  left: 0;
-  background-color: #333;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 6px 0;
-  margin: 0;
-  list-style: none;
-  min-width: 180px;
-  z-index: 1000;
-
-
 }

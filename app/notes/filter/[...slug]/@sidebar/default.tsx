@@ -16,7 +16,10 @@ export default async function SidebarNotes() {
       {tagsList.map((tag) => {
         return (
           <li className={css.menuItem} key={tag}>
-            <Link className={css.menuLink} href={`/notes/filter/${tag}`}>
+            <Link
+              href={`url до сторінки за відповідним тегом`}
+              className={css.menuLink}
+            >
               {tag}
             </Link>
           </li>
