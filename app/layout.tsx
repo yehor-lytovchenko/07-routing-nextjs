@@ -16,16 +16,12 @@ interface RootLayoutProps {
   sidebar: React.ReactNode;
 }
 
-export default function RootLayout({
-  children,
-  sidebar,
-}: Readonly<RootLayoutProps>) {
+export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
   return (
     <html lang="en">
       <body>
         <TanStackProvider>
           <Header />
-          <aside>{sidebar}</aside>
           {children}
           <Footer />
           <div id="modal-root"></div>
